@@ -6,6 +6,8 @@ TagManager:
   tags:
   - LeftHand
   - RightHand
+  - Mag_Stanag556
+  - Gun
   layers:
   - Default
   - TransparentFX

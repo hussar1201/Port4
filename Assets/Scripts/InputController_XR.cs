@@ -37,6 +37,18 @@ public class InputController_XR : MonoBehaviour
         get;
         private set;
     }
+
+    public bool trigger_L_bool
+    {
+        get;
+        private set;
+    }
+    public bool trigger_R_bool
+    {
+        get;
+        private set;
+    }
+
     public float grip_L
     {
         get;
@@ -53,6 +65,16 @@ public class InputController_XR : MonoBehaviour
         private set;
     }
     public Vector2 axis_XY_R
+    {
+        get;
+        private set;
+    }
+    public bool Btn_A
+    {
+        get;
+        private set;
+    }
+    public bool Btn_B
     {
         get;
         private set;
@@ -121,7 +143,13 @@ public class InputController_XR : MonoBehaviour
             
             this.trigger_R = trigger_R;
         }
-        if (Controller_R.TryGetFeatureValue(CommonUsages.grip, out float grip_R) && grip_R > 0.1f)
+
+        if (Controller_R.TryGetFeatureValue(CommonUsages.triggerButton, out bool trigger_R_bool))
+        {
+            this.trigger_R_bool = trigger_R_bool;
+        }
+
+            if (Controller_R.TryGetFeatureValue(CommonUsages.grip, out float grip_R) && grip_R > 0.1f)
         {
             hand_R.SetFloat("Grip", grip_R);
             
@@ -133,7 +161,16 @@ public class InputController_XR : MonoBehaviour
             
             this.axis_XY_R = axis_XY_R;
         }
-
+        if(Controller_R.TryGetFeatureValue(CommonUsages.primaryButton,out bool Btn_A))
+        {
+            this.Btn_A = Btn_A;
+            
+        }
+        if (Controller_R.TryGetFeatureValue(CommonUsages.secondaryButton, out bool Btn_B))
+        {
+            this.Btn_B = Btn_B;
+            
+        }
 
 
 

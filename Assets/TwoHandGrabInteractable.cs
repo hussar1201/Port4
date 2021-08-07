@@ -19,8 +19,11 @@ public class TwoHandGrabInteractable : XRGrabInteractable
 
     private void Start()
     {
-        grabPoint_second.onSelectEntered.AddListener(OnSecondPointGrabEnter);
-        grabPoint_second.onSelectExited.AddListener(OnSecondPointGrabExit);
+        grabPoint_second.selectEntered.AddListener(OnSecondPointGrabEnter);
+        grabPoint_second.selectExited.AddListener(OnSecondPointGrabExit);
+
+        //grabPoint_second.onSelectEntered.AddListener(OnSecondPointGrabEnter);
+        //grabPoint_second.onSelectExited.AddListener(OnSecondPointGrabExit);
 
     }
 
@@ -53,21 +56,19 @@ public class TwoHandGrabInteractable : XRGrabInteractable
         return tgtRotation;
     }
 
-    public void OnSecondPointGrabEnter(XRBaseInteractor interactor)
+    public void OnSecondPointGrabEnter(SelectEnterEventArgs args)
     {
         Debug.Log("Second Grabbed");
-        second_hand = interactor;
+        second_hand = args.interactor;
+        
+        // 이해안되는부분 추가한거
         initialRotationOffset = Quaternion.Inverse(GetTwoRotation()) * selectingInteractor.attachTransform.rotation;
     }
 
-    public void OnSecondPointGrabExit(XRBaseInteractor interactor)
-    {
+    public void OnSecondPointGrabExit(SelectExitEventArgs args)
+    {              
         Debug.Log("Second Grabbed Released");
-        second_hand = null;
-
-        Debug.Log(selectingInteractor);
-        Debug.Log(second_hand);
-        
+        second_hand = null;               
     }
 
 
