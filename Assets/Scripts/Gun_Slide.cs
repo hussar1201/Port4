@@ -32,8 +32,8 @@ public class Gun_Slide : MonoBehaviour
 
             if (flag_loaded = flag_pulled && flag_released)
             {
+                Debug.Log(flag_pulled + " " + flag_released+ "    Handle_Loaded");
                 soundPlayer.PlaySound(SoundPlayer.Part.slide, 1);
-                Debug.Log("Handle_Loaded");
                 flag_pulled = false;
             }            
         }  

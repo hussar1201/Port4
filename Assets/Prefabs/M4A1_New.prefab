@@ -393,6 +393,7 @@ MonoBehaviour:
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
   tag_tgt: Mag_Stanag556
+  soundPlayer: {fileID: 0}
 --- !u!1 &1735299416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,6 +1160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collider_pulled: {fileID: 591403116}
   collider_released: {fileID: 387591716}
+  soundPlayer: {fileID: 0}
 --- !u!1 &5010495506063921199
 GameObject:
   m_ObjectHideFlags: 0
@@ -1485,6 +1487,7 @@ MonoBehaviour:
   mag_attached: {fileID: 0}
   handle: {fileID: 544935930}
   magCatcher: {fileID: 1347538683}
+  isAutoFireAvailable: 0
   isAmmoOnChamber: 0
 --- !u!114 &6718921867080639965
 MonoBehaviour:

@@ -5,26 +5,30 @@ using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 
 
-public class CheckableXRSocketInteractor : XRSocketInteractor
+public class MagCatcher : XRSocketInteractor
 {
-    public string tag_tgt;
-    private Gun gun;
-    private Magazine mag;
+    public string tag_AvailableMag;
+    private Mag mag;
+
+    private FireArm fireArm;
+    
     private bool flag_isCorrectObject = false;
     private bool flag_ejected = false;
+    public bool flag_new_mag_inserted;
+
 
     public SoundPlayer soundPlayer;
 
     protected override void Start()
     {
-        gun = GetComponentInParent<Gun>();
-        soundPlayer = GetComponentInParent<SoundPlayer>();
+        fireArm = GetComponentInParent<FireArm>();
+        //soundPlayer = GetComponentInParent<SoundPlayer>();
         base.Start();
     }
 
     protected override void OnHoverEntering(HoverEnterEventArgs args)
     {
-        if (!args.interactable.CompareTag(tag_tgt))
+        if (args.interactable.CompareTag(tag_AvailableMag)==false)
         {
             this.allowSelect = false;
             flag_isCorrectObject = false;
@@ -43,13 +47,12 @@ public class CheckableXRSocketInteractor : XRSocketInteractor
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
         // interactor = 소켓, interactable = 소켓에 들어온 오브젝트
-        mag = args.interactable.gameObject.GetComponent<Magazine>();
-        gun.mag_attached = mag;
+        mag = args.interactable.gameObject.GetComponent<Mag>();      
+        fireArm.mag_attached = mag;
         flag_ejected = false;
-        soundPlayer.PlaySound(SoundPlayer.Part.mag, 0+Random.Range(0,1));
+        if(mag.flag_IsAmmoLeft) flag_new_mag_inserted = true;
+        //soundPlayer.PlaySound(SoundPlayer.Part.mag, 0 + Random.Range(0, 1));
         base.OnSelectEntered(args);
-
-
     }
 
     protected override void OnSelectExited(SelectExitEventArgs args)
@@ -62,16 +65,13 @@ public class CheckableXRSocketInteractor : XRSocketInteractor
     public void RemoveMag()
     {
         if (mag != null)
-        {
-            if (!gun.isAmmoOnChamber && gun.isLoaded)
-            {
-                if (mag.ConsumeAmmo()) gun.isAmmoOnChamber = true;
-                else gun.isAmmoOnChamber = false;
-            }            
-            soundPlayer.PlaySound(SoundPlayer.Part.mag, 2 + Random.Range(0, 1));
+        {                       
+            if (!fireArm.chamber.isAmmoOnChamber && fireArm.isLoaded) mag.SendAmmoToChamber();           
+            flag_new_mag_inserted = false;
+            //soundPlayer.PlaySound(SoundPlayer.Part.mag, 2 + Random.Range(0, 1));
             flag_isCorrectObject = false;
-            gun.mag_attached = null;
-            mag = null;            
+            fireArm.mag_attached = null;
+            mag = null;
         }
     }
 
@@ -84,12 +84,10 @@ public class CheckableXRSocketInteractor : XRSocketInteractor
 
     IEnumerator Ejecting()
     {
-        gun.mag_attached.Eject();
+        fireArm.mag_attached.Eject();
         yield return new WaitForSeconds(.5f);
         RemoveMag();
-
         socketActive = this.allowHover = this.allowSelect = true;
-
     }
 
 

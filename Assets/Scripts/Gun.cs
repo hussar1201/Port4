@@ -17,9 +17,11 @@ public class Gun : MonoBehaviour
     private FiringMode mode_fire = FiringMode.auto;
 
     private bool isBoltCatchOpened = false;
+    public bool isAutoFireAvailable = true;
     private bool flag_trigger_released = true;
 
-    private float time_interval_autofire = 1f;
+
+    private float time_interval_autofire = .1f;
     private float time_passed = 0f;
 
     private SoundPlayer soundPlayer;
@@ -70,24 +72,25 @@ public class Gun : MonoBehaviour
     private void Start()
     {
         soundPlayer = GetComponent<SoundPlayer>();
+        if (!isAutoFireAvailable) mode_fire = FiringMode.semi;
     }
 
 
     private void Update()
     {
         if (!isGrabbed) return; // 플레이어가 잡고 있지 않으면 작동X
-        time_passed += Time.deltaTime; //
+        time_passed += Time.deltaTime; 
 
         if (InputController_XR.instance.Btn_A) // 단발,연발 모드 변경
         {
+            if (mode_fire == FiringMode.semi && isAutoFireAvailable) mode_fire = FiringMode.auto;
             if (mode_fire == FiringMode.auto) mode_fire = FiringMode.semi;
-            else mode_fire = FiringMode.auto;
-            soundPlayer.PlaySound(SoundPlayer.Part.frame, (int)num_sound.switch_fake);
+            
         }
 
         if (mag_attached != null)
         {
-            if (InputController_XR.instance.Btn_B && !isBoltCatchOpened) // 탄창 사출
+            if (InputController_XR.instance.Btn_B && !isBoltCatchOpened && isLoaded) // 탄창 사출
             {
                 magCatcher.EjectMag();              
                 isLoaded = false;
@@ -96,7 +99,7 @@ public class Gun : MonoBehaviour
         }
 
 
-        if (InputController_XR.instance.trigger_R >= 0.9f) //사격
+        if (InputController_XR.instance.trigger_R >= 0.8f) //사격
         {
             if (mode_fire == FiringMode.auto)
             {
