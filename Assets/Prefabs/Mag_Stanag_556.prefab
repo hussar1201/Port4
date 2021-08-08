@@ -264,4 +264,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 456dace019b4af04f8821f05e9145c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammo: 5
+  ammo_initial: 20
+  ammo_internal: 0
