@@ -46,7 +46,7 @@ public class CheckableXRSocketInteractor : XRSocketInteractor
         mag = args.interactable.gameObject.GetComponent<Magazine>();
         gun.mag_attached = mag;
         flag_ejected = false;
-        soundPlayer.PlaySound(SoundPlayer.Part.mag, 0+Random.Range(0,1));
+        //soundPlayer.PlaySound(SoundPlayer.Part.mag, 0+Random.Range(0,1));
         base.OnSelectEntered(args);
 
 
@@ -68,7 +68,7 @@ public class CheckableXRSocketInteractor : XRSocketInteractor
                 if (mag.ConsumeAmmo()) gun.isAmmoOnChamber = true;
                 else gun.isAmmoOnChamber = false;
             }            
-            soundPlayer.PlaySound(SoundPlayer.Part.mag, 2 + Random.Range(0, 1));
+            //soundPlayer.PlaySound(SoundPlayer.Part.mag, 2 + Random.Range(0, 1));
             flag_isCorrectObject = false;
             gun.mag_attached = null;
             mag = null;            

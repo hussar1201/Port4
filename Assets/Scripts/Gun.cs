@@ -49,7 +49,7 @@ public class Gun : MonoBehaviour
         {
             Debug.Log("Firing_onMag");
             mag_attached.ConsumeAmmo();
-            soundPlayer.PlaySound(SoundPlayer.Part.frame, (int)num_sound.single_shot);
+            //soundPlayer.PlaySound(SoundPlayer.Part.frame, (int)num_sound.single_shot);
             isBoltCatchOpened = false;
         }
         else if (isAmmoOnChamber)
@@ -57,14 +57,14 @@ public class Gun : MonoBehaviour
             Debug.Log("Firing_onChamber");
             isAmmoOnChamber = false;
             isBoltCatchOpened = true;
-            soundPlayer.PlaySound(SoundPlayer.Part.frame, (int)num_sound.single_shot);
+            //soundPlayer.PlaySound(SoundPlayer.Part.frame, (int)num_sound.single_shot);
         }
         else
         {
             Debug.Log("Ammo Low");
             isLoaded = false;
             isBoltCatchOpened = true;
-            soundPlayer.PlaySound(SoundPlayer.Part.frame, (int)num_sound.empty_gun);
+            //soundPlayer.PlaySound(SoundPlayer.Part.frame, (int)num_sound.empty_gun);
         }
 
     }
@@ -124,7 +124,7 @@ public class Gun : MonoBehaviour
             if (boltcatch = (InputController_XR.instance.Btn_B && isBoltCatchOpened) || handle.flag_loaded) // 장전 관련
             {
                 isLoaded = true;
-                if (boltcatch) soundPlayer.PlaySound(SoundPlayer.Part.frame, (int)num_sound.releaseBoltCatch);
+                //if (boltcatch) soundPlayer.PlaySound(SoundPlayer.Part.frame, (int)num_sound.releaseBoltCatch);
 
                 if (!isAmmoOnChamber && mag_attached.flag_IsAmmoLeft)
                 {

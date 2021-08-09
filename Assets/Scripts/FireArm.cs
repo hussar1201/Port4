@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FireArm : MonoBehaviour
 {
-
     private bool isGrabbed = false;
     public bool isLoaded { get; private set; }
 
@@ -12,23 +11,26 @@ public class FireArm : MonoBehaviour
     public Gun_Slide handle = null;
     public MagCatcher magCatcher = null;
     public GunChamber chamber = null;
+    public ParticleSystem ps = null;
 
     private enum FiringMode { semi, auto };
+    public Animator animator_Selecter;
     private FiringMode mode_fire = FiringMode.auto;
     private float time_interval_autofire = .1f;
-    private float time_passed = 0f;
+    private float time_passed_interval_fire = 0f;
     public bool isAutoFireAvailable = true;
     private bool flag_trigger_released = true;
+    private float time_interval_btn_pressed = .2f;
+    private float time_passed_interval_btn_pressed = 0f;
 
     private SoundPlayer soundPlayer;
-    private enum num_sound { releaseBoltCatch, single_shot, switch_fake, empty_gun, silencer_shot };
-
-
+    
     public void Grabbed()
     {
         Debug.Log("is grabbed");
         isGrabbed = true;
     }
+
     public void UnGrabbed()
     {
         Debug.Log("is ungrabbed");
@@ -40,7 +42,7 @@ public class FireArm : MonoBehaviour
         if (chamber.isAmmoOnChamber)
         {
             Debug.Log("GUN: FIRE!!!");
-            //총 발사음 재생
+            soundPlayer.PlayOneShot(SoundPlayer.Part.shot, 0);
             chamber.LoadAmmo();
             if (!chamber.isAmmoOnChamber)
             {
@@ -48,79 +50,122 @@ public class FireArm : MonoBehaviour
                 chamber.isBoltOpened = true;
                 isLoaded = false;
                 magCatcher.flag_new_mag_inserted = false;
-                //볼트 열린 소리 재생
+                soundPlayer.PlayOneShot(SoundPlayer.Part.etc, 1);
 
             }
         }
         else
         {
-            //빈총 발사음 재생
+            soundPlayer.PlayOneShot(SoundPlayer.Part.shot, 1);
         }
     }
+
+    IEnumerator ShowMuzzleBreak()
+    {
+        ps.gameObject.SetActive(true);
+        ps.Play();
+        for(int i=0; i < 3; i++) { 
+            yield return new WaitForSeconds(.1f);
+            ps.transform.Rotate(30f, 0f, 0f);
+        }
+        yield return new WaitForSeconds(.05f);
+        ps.transform.Rotate(-90f, 0f, 0f);
+        yield return new WaitForSeconds(.05f);
+        ps.Pause();
+        ps.gameObject.SetActive(false);
+    }
+
 
     private void Start()
     {
         //연발모드 
         if (!isAutoFireAvailable) mode_fire = FiringMode.semi;
+        
+        animator_Selecter.SetBool("isAuto", mode_fire == FiringMode.auto);
+
 
         //소리 재생 컴포넌트 참조
         soundPlayer = GetComponent<SoundPlayer>();
 
-        //각종 하위부품 컴포넌트 참조
-        mag_attached = GetComponentInChildren<Mag>();
-        handle = GetComponentInChildren<Gun_Slide>();
-        magCatcher = GetComponentInChildren<MagCatcher>();
-        chamber = GetComponentInChildren<GunChamber>();
+        ps.Play();
+        ps.Pause();
+        ps.gameObject.SetActive(false);       
+        
+  
+    }
+
+    private void CheckFireMode()
+    {
+        Debug.Log("Check Selecter");
+        if (mode_fire == FiringMode.semi && isAutoFireAvailable)
+        {
+            mode_fire = FiringMode.auto;
+            animator_Selecter.SetBool("isAuto", true);
+        }
+        if (mode_fire == FiringMode.auto)
+        {
+            mode_fire = FiringMode.semi;
+            animator_Selecter.SetBool("isAuto", false);
+        }
+
     }
 
 
     private void Update()
     {
         if (!isGrabbed) return; // 플레이어가 잡고 있지 않으면 작동X
-        
-        time_passed += Time.deltaTime; //단발 발사 시, 인터벌 계산 위한 코드
+        time_passed_interval_fire += Time.deltaTime;//단발 발사 시, 인터벌 계산 위한 코드
+        time_passed_interval_btn_pressed += Time.deltaTime; // 버튼 오작동 방지
 
-        if (InputController_XR.instance.Btn_A) // 단발,연발 모드 변경 <- 소리 재생시 약간 문제 있음으로 수정 필요
+        if (time_passed_interval_btn_pressed >= time_interval_btn_pressed)
         {
-            if (mode_fire == FiringMode.semi && isAutoFireAvailable) mode_fire = FiringMode.auto;
-            if (mode_fire == FiringMode.auto) mode_fire = FiringMode.semi;
-        }
+            time_passed_interval_btn_pressed = 0f;
 
-        if (mag_attached)
-        {                   
-            if (InputController_XR.instance.Btn_B) // 장전 관련
+            if (InputController_XR.instance.Btn_A) // 단발,연발 모드 변경 
             {
-                Debug.Log("New MAG: " + magCatcher.flag_new_mag_inserted);
-                Debug.Log("Bolt: " + chamber.isBoltOpened + "   AmmoOnChamber" + chamber.isAmmoOnChamber);
+                CheckFireMode();
+                soundPlayer.Play(SoundPlayer.Part.etc, 0);
+            }
 
-                if(chamber.isBoltOpened && !chamber.isAmmoOnChamber)
+            if (mag_attached)
+            {
+                if (InputController_XR.instance.Btn_B) // 장전 관련
                 {
-                    //soundPlayer.PlaySound(SoundPlayer.Part.frame, (int)num_sound.releaseBoltCatch);                  
-                    if (magCatcher.flag_new_mag_inserted)
+                    Debug.Log("New MAG: " + magCatcher.flag_new_mag_inserted);
+                    Debug.Log("BoltOpen: " + chamber.isBoltOpened + "   AmmoOnChamber: " + chamber.isAmmoOnChamber);
+
+                    if (chamber.isBoltOpened && !chamber.isAmmoOnChamber)
                     {
-                        Debug.Log("RELOADED BY BOLTCATCHER");
-                        chamber.LoadAmmo();
-                        isLoaded=true;
+
+                        if (magCatcher.flag_new_mag_inserted)
+                        {
+                            Debug.Log("RELOADED BY BOLTCATCHER");
+                            soundPlayer.PlayOneShot(SoundPlayer.Part.etc, 1);
+                            chamber.LoadAmmo();
+                            isLoaded = true;
+                        }
+                        else magCatcher.EjectMag();
                     }
                     else magCatcher.EjectMag();
-                }else magCatcher.EjectMag();
+                }
+                else if (handle.flag_loaded)
+                {
+                    chamber.LoadAmmo();
+                    handle.OnGunLoaded();
+                    isLoaded = true;
+                }
             }
-            else if (handle.flag_loaded)
-            {
-                chamber.LoadAmmo();
-                handle.OnGunLoaded();
-                isLoaded = true;
-            }
+
         }
 
         if (InputController_XR.instance.trigger_R >= 0.8f) //사격
         {
             if (mode_fire == FiringMode.auto)
             {
-                if (time_passed >= time_interval_autofire)
+                if (time_passed_interval_fire >= time_interval_autofire)
                 {
                     Fire();
-                    time_passed = 0f;
+                    time_passed_interval_fire = 0f;
                 }
             }
             else if (mode_fire == FiringMode.semi && flag_trigger_released)

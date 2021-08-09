@@ -5,11 +5,12 @@ using UnityEngine;
 public class SoundPlayer : MonoBehaviour
 {
     private AudioSource audioSource;
-    public enum Part { frame, slide, mag };
+    public enum Part { shot, slide, mag, etc };
 
-    public AudioClip[] audioClips_frame;
+    public AudioClip[] audioClips_shot;
     public AudioClip[] audioClips_slide;
     public AudioClip[] audioClips_mag;
+    public AudioClip[] audioClips_etc;
 
     private List<AudioClip[]> list_arrClips = new List<AudioClip[]>();
 
@@ -17,15 +18,24 @@ public class SoundPlayer : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        list_arrClips.Add(audioClips_frame);
+        list_arrClips.Add(audioClips_shot);
         list_arrClips.Add(audioClips_slide); 
         list_arrClips.Add(audioClips_mag);
+        list_arrClips.Add(audioClips_etc);
     }
 
-    public void PlaySound(Part part, int num)
+    public void PlayOneShot(Part part, int num)
     {
+        Debug.Log(part+ "  "+num);
+
         audioSource.PlayOneShot(list_arrClips[(int)part][num]);
-    }   
+    }
+
+    public void Play(Part part, int num)
+    {
+        audioSource.clip = list_arrClips[(int)part][num];
+        audioSource.Play();
+    }
 
 
 }

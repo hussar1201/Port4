@@ -185,9 +185,6 @@ public class InputController_XR : MonoBehaviour
             teleporter_R.SetActive(false);
         }
         */
-
-
-
-
     }
+
 }
