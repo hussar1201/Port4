@@ -15,6 +15,7 @@ public class FireArm : MonoBehaviour
 
     private enum FiringMode { semi, auto };
     public Animator animator_Selecter;
+    public Animator animator_Bolt;
     private FiringMode mode_fire = FiringMode.auto;
     private float time_interval_autofire = .1f;
     private float time_passed_interval_fire = 0f;
@@ -24,7 +25,7 @@ public class FireArm : MonoBehaviour
     private float time_passed_interval_btn_pressed = 0f;
 
     private SoundPlayer soundPlayer;
-    
+
     public void Grabbed()
     {
         Debug.Log("is grabbed");
@@ -43,16 +44,22 @@ public class FireArm : MonoBehaviour
         {
             Debug.Log("GUN: FIRE!!!");
             soundPlayer.PlayOneShot(SoundPlayer.Part.shot, 0);
+            animator_Bolt.SetBool("Firing", true);
+            StartCoroutine(ShowMuzzleBreak());
+
+
             chamber.LoadAmmo();
             if (!chamber.isAmmoOnChamber)
             {
                 Debug.Log("GUN: Out Of Ammo");
                 chamber.isBoltOpened = true;
+                animator_Bolt.SetBool("isBoltOpened", chamber.isBoltOpened);
                 isLoaded = false;
                 magCatcher.flag_new_mag_inserted = false;
                 soundPlayer.PlayOneShot(SoundPlayer.Part.etc, 1);
-
             }
+
+
         }
         else
         {
@@ -64,13 +71,14 @@ public class FireArm : MonoBehaviour
     {
         ps.gameObject.SetActive(true);
         ps.Play();
-        for(int i=0; i < 3; i++) { 
-            yield return new WaitForSeconds(.1f);
-            ps.transform.Rotate(30f, 0f, 0f);
+        for (int i = 0; i < 3; i++)
+        {
+            yield return new WaitForSeconds(.03f);
+            ps.transform.Rotate(0f, 0f, 30f);
         }
-        yield return new WaitForSeconds(.05f);
-        ps.transform.Rotate(-90f, 0f, 0f);
-        yield return new WaitForSeconds(.05f);
+        animator_Bolt.SetBool("Firing", false);
+        yield return new WaitForSeconds(.03f);
+        ps.transform.Rotate(0f, 0f, -90f);
         ps.Pause();
         ps.gameObject.SetActive(false);
     }
@@ -80,32 +88,35 @@ public class FireArm : MonoBehaviour
     {
         //연발모드 
         if (!isAutoFireAvailable) mode_fire = FiringMode.semi;
+
+        animator_Selecter.SetBool("flag_Auto", mode_fire == FiringMode.auto);
         
-        animator_Selecter.SetBool("isAuto", mode_fire == FiringMode.auto);
-
-
         //소리 재생 컴포넌트 참조
         soundPlayer = GetComponent<SoundPlayer>();
 
         ps.Play();
         ps.Pause();
-        ps.gameObject.SetActive(false);       
-        
-  
+        ps.gameObject.SetActive(false);
+
+
     }
 
     private void CheckFireMode()
     {
-        Debug.Log("Check Selecter");
+
         if (mode_fire == FiringMode.semi && isAutoFireAvailable)
         {
             mode_fire = FiringMode.auto;
-            animator_Selecter.SetBool("isAuto", true);
+            Debug.Log("Auto");
+            animator_Selecter.SetBool("flag_Auto", true);
+            return;
         }
-        if (mode_fire == FiringMode.auto)
+        else if (mode_fire == FiringMode.auto)
         {
+            Debug.Log("Semi");
             mode_fire = FiringMode.semi;
-            animator_Selecter.SetBool("isAuto", false);
+            animator_Selecter.SetBool("flag_Auto", false);
+            return;
         }
 
     }
@@ -173,6 +184,7 @@ public class FireArm : MonoBehaviour
                 Fire();
                 flag_trigger_released = false;
             }
+
         }
         if (InputController_XR.instance.trigger_R <= 0.5f) flag_trigger_released = true; //단발 사격시 방아쇠 관련 플래그
     }

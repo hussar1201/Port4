@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7056726122135492217}
   - component: {fileID: 6215350735854639580}
   - component: {fileID: 8189140449009921302}
+  - component: {fileID: 3313042037894672700}
   m_Layer: 0
   m_Name: Ammo_556
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 7684644724714196163}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.38471308, y: 1.5, z: 0.6189475}
-  m_LocalScale: {x: 24.833948, y: 66.13002, z: 32.5}
+  m_LocalScale: {x: 0.79468673, y: 0.7150431, z: 1.0731093}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &3313042037894672700
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7684644724714196163}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.004
+  m_Height: 0.03
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: -0.010000001}

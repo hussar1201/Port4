@@ -26,8 +26,6 @@ public class SoundPlayer : MonoBehaviour
 
     public void PlayOneShot(Part part, int num)
     {
-        Debug.Log(part+ "  "+num);
-
         audioSource.PlayOneShot(list_arrClips[(int)part][num]);
     }
 
