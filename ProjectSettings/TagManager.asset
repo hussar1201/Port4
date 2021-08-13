@@ -9,6 +9,7 @@ TagManager:
   - Mag_Stanag556
   - Gun
   - Mag_M1911
+  - Hand
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Grabable
   - Grabable_DirectOnly
   - Grabable_SecondPoint
-  - 
+  - Hand
   - 
   - 
   - 

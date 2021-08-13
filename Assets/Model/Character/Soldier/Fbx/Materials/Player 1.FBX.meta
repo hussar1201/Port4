@@ -1,0 +1,651 @@
+fileFormatVersion: 2
+guid: 3dfc3c94d968aaf40a5feab3b82892e5
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: 5862543501114407046
+    second: Armature|Armature|Take 001|BaseLayer
+  - first:
+      74: -3894031280724987059
+    second: Armature|mixamorig:HeadTop_End|Take 001|BaseLayer
+  - first:
+      74: -267694519532737325
+    second: Armature|mixamorig:LeftHandIndex4|Take 001|BaseLayer
+  - first:
+      74: 8255777113079365519
+    second: Armature|mixamorig:LeftHandMiddle4|Take 001|BaseLayer
+  - first:
+      74: 6501967810750421502
+    second: Armature|mixamorig:LeftHandPinky4|Take 001|BaseLayer
+  - first:
+      74: -8281836673539746879
+    second: Armature|mixamorig:LeftHandRing4|Take 001|BaseLayer
+  - first:
+      74: 3733573248948132678
+    second: Armature|mixamorig:LeftHandThumb4|Take 001|BaseLayer
+  - first:
+      74: 4903037420033866818
+    second: Armature|mixamorig:LeftToe_End|Take 001|BaseLayer
+  - first:
+      74: 560357408750917452
+    second: Armature|mixamorig:RightHandIndex4|Take 001|BaseLayer
+  - first:
+      74: 8554203434867958941
+    second: Armature|mixamorig:RightHandMiddle4|Take 001|BaseLayer
+  - first:
+      74: -2533792677337248977
+    second: Armature|mixamorig:RightHandPinky4|Take 001|BaseLayer
+  - first:
+      74: -5788219278118492963
+    second: Armature|mixamorig:RightHandRing4|Take 001|BaseLayer
+  - first:
+      74: 2320909765866536706
+    second: Armature|mixamorig:RightHandThumb4|Take 001|BaseLayer
+  - first:
+      74: 6866908970026911439
+    second: Armature|mixamorig:RightToe_End|Take 001|BaseLayer
+  - first:
+      74: -2377561563539870068
+    second: mixamorig:HeadTop_End|mixamorig:HeadTop_End|Take 001|BaseLayer
+  - first:
+      74: -5042159171084847432
+    second: mixamorig:HeadTop_End|mixamorig:LeftHandIndex4|Take 001|BaseLayer
+  - first:
+      74: 6872606195296386784
+    second: mixamorig:HeadTop_End|mixamorig:LeftHandMiddle4|Take 001|BaseLayer
+  - first:
+      74: -1433789074709865561
+    second: mixamorig:HeadTop_End|mixamorig:LeftHandPinky4|Take 001|BaseLayer
+  - first:
+      74: 1687137860200046241
+    second: mixamorig:HeadTop_End|mixamorig:LeftHandRing4|Take 001|BaseLayer
+  - first:
+      74: -1040073027897809124
+    second: mixamorig:HeadTop_End|mixamorig:LeftHandThumb4|Take 001|BaseLayer
+  - first:
+      74: 5885019945178875472
+    second: mixamorig:HeadTop_End|mixamorig:LeftToe_End|Take 001|BaseLayer
+  - first:
+      74: -5318416008597532300
+    second: mixamorig:HeadTop_End|mixamorig:RightHandIndex4|Take 001|BaseLayer
+  - first:
+      74: -4052388047899366083
+    second: mixamorig:HeadTop_End|mixamorig:RightHandMiddle4|Take 001|BaseLayer
+  - first:
+      74: 3300772403181593102
+    second: mixamorig:HeadTop_End|mixamorig:RightHandPinky4|Take 001|BaseLayer
+  - first:
+      74: 2470808356955823420
+    second: mixamorig:HeadTop_End|mixamorig:RightHandRing4|Take 001|BaseLayer
+  - first:
+      74: -874788736557542704
+    second: mixamorig:HeadTop_End|mixamorig:RightHandThumb4|Take 001|BaseLayer
+  - first:
+      74: -3819699962241324652
+    second: mixamorig:HeadTop_End|mixamorig:RightToe_End|Take 001|BaseLayer
+  - first:
+      74: 1906478989919498244
+    second: mixamorig:LeftHandThumb4|mixamorig:HeadTop_End|Take 001|BaseLayer
+  - first:
+      74: 6887433856704087623
+    second: mixamorig:LeftHandThumb4|mixamorig:LeftHandIndex4|Take 001|BaseLayer
+  - first:
+      74: -234017234558460672
+    second: mixamorig:LeftHandThumb4|mixamorig:LeftHandMiddle4|Take 001|BaseLayer
+  - first:
+      74: -7369468639295574232
+    second: mixamorig:LeftHandThumb4|mixamorig:LeftHandPinky4|Take 001|BaseLayer
+  - first:
+      74: 6728079151147260462
+    second: mixamorig:LeftHandThumb4|mixamorig:LeftHandRing4|Take 001|BaseLayer
+  - first:
+      74: 7348375143077516697
+    second: mixamorig:LeftHandThumb4|mixamorig:LeftHandThumb4|Take 001|BaseLayer
+  - first:
+      74: 579197447277620763
+    second: mixamorig:LeftHandThumb4|mixamorig:LeftToe_End|Take 001|BaseLayer
+  - first:
+      74: 3205982743038541613
+    second: mixamorig:LeftHandThumb4|mixamorig:RightHandIndex4|Take 001|BaseLayer
+  - first:
+      74: -7578989146393181397
+    second: mixamorig:LeftHandThumb4|mixamorig:RightHandMiddle4|Take 001|BaseLayer
+  - first:
+      74: 3808934309695907733
+    second: mixamorig:LeftHandThumb4|mixamorig:RightHandPinky4|Take 001|BaseLayer
+  - first:
+      74: 3540011406952655176
+    second: mixamorig:LeftHandThumb4|mixamorig:RightHandRing4|Take 001|BaseLayer
+  - first:
+      74: 9020488096609637219
+    second: mixamorig:LeftHandThumb4|mixamorig:RightHandThumb4|Take 001|BaseLayer
+  - first:
+      74: 6016610997633208994
+    second: mixamorig:LeftHandThumb4|mixamorig:RightToe_End|Take 001|BaseLayer
+  - first:
+      74: -5129714445075556186
+    second: mixamorig:LeftHandIndex4|mixamorig:HeadTop_End|Take 001|BaseLayer
+  - first:
+      74: 8569398410205749745
+    second: mixamorig:LeftHandIndex4|mixamorig:LeftHandIndex4|Take 001|BaseLayer
+  - first:
+      74: 5710078083885219666
+    second: mixamorig:LeftHandIndex4|mixamorig:LeftHandMiddle4|Take 001|BaseLayer
+  - first:
+      74: -6661985340416670271
+    second: mixamorig:LeftHandIndex4|mixamorig:LeftHandPinky4|Take 001|BaseLayer
+  - first:
+      74: 6175242854841581870
+    second: mixamorig:LeftHandIndex4|mixamorig:LeftHandRing4|Take 001|BaseLayer
+  - first:
+      74: 2601211783825812387
+    second: mixamorig:LeftHandIndex4|mixamorig:LeftHandThumb4|Take 001|BaseLayer
+  - first:
+      74: -2902534717648315128
+    second: mixamorig:LeftHandIndex4|mixamorig:LeftToe_End|Take 001|BaseLayer
+  - first:
+      74: 6101613155100931888
+    second: mixamorig:LeftHandIndex4|mixamorig:RightHandIndex4|Take 001|BaseLayer
+  - first:
+      74: -3851817568238713723
+    second: mixamorig:LeftHandIndex4|mixamorig:RightHandMiddle4|Take 001|BaseLayer
+  - first:
+      74: -4820142235193656586
+    second: mixamorig:LeftHandIndex4|mixamorig:RightHandPinky4|Take 001|BaseLayer
+  - first:
+      74: -1082193563747737177
+    second: mixamorig:LeftHandIndex4|mixamorig:RightHandRing4|Take 001|BaseLayer
+  - first:
+      74: 7170096535038311393
+    second: mixamorig:LeftHandIndex4|mixamorig:RightHandThumb4|Take 001|BaseLayer
+  - first:
+      74: 6709574453914492341
+    second: mixamorig:LeftHandIndex4|mixamorig:RightToe_End|Take 001|BaseLayer
+  - first:
+      74: -1285687633914786182
+    second: mixamorig:LeftHandMiddle4|mixamorig:HeadTop_End|Take 001|BaseLayer
+  - first:
+      74: 6599234314590365498
+    second: mixamorig:LeftHandMiddle4|mixamorig:LeftHandIndex4|Take 001|BaseLayer
+  - first:
+      74: -5738276581932403722
+    second: mixamorig:LeftHandMiddle4|mixamorig:LeftHandMiddle4|Take 001|BaseLayer
+  - first:
+      74: 7044103877184063129
+    second: mixamorig:LeftHandMiddle4|mixamorig:LeftHandPinky4|Take 001|BaseLayer
+  - first:
+      74: -6754607428057208298
+    second: mixamorig:LeftHandMiddle4|mixamorig:LeftHandRing4|Take 001|BaseLayer
+  - first:
+      74: 7882432634502128351
+    second: mixamorig:LeftHandMiddle4|mixamorig:LeftHandThumb4|Take 001|BaseLayer
+  - first:
+      74: -2509220823989207452
+    second: mixamorig:LeftHandMiddle4|mixamorig:LeftToe_End|Take 001|BaseLayer
+  - first:
+      74: -8210677131340884424
+    second: mixamorig:LeftHandMiddle4|mixamorig:RightHandIndex4|Take 001|BaseLayer
+  - first:
+      74: 6369378454737558280
+    second: mixamorig:LeftHandMiddle4|mixamorig:RightHandMiddle4|Take 001|BaseLayer
+  - first:
+      74: 6071921344841318166
+    second: mixamorig:LeftHandMiddle4|mixamorig:RightHandPinky4|Take 001|BaseLayer
+  - first:
+      74: -2504610569963126822
+    second: mixamorig:LeftHandMiddle4|mixamorig:RightHandRing4|Take 001|BaseLayer
+  - first:
+      74: 558554419676671598
+    second: mixamorig:LeftHandMiddle4|mixamorig:RightHandThumb4|Take 001|BaseLayer
+  - first:
+      74: -1318068827969971167
+    second: mixamorig:LeftHandMiddle4|mixamorig:RightToe_End|Take 001|BaseLayer
+  - first:
+      74: -8500787401667148245
+    second: mixamorig:LeftHandRing4|mixamorig:HeadTop_End|Take 001|BaseLayer
+  - first:
+      74: 745516925007431339
+    second: mixamorig:LeftHandRing4|mixamorig:LeftHandIndex4|Take 001|BaseLayer
+  - first:
+      74: -4527629870602444488
+    second: mixamorig:LeftHandRing4|mixamorig:LeftHandMiddle4|Take 001|BaseLayer
+  - first:
+      74: -1670118204230351612
+    second: mixamorig:LeftHandRing4|mixamorig:LeftHandPinky4|Take 001|BaseLayer
+  - first:
+      74: 2653444910975898034
+    second: mixamorig:LeftHandRing4|mixamorig:LeftHandRing4|Take 001|BaseLayer
+  - first:
+      74: -3124919497475909867
+    second: mixamorig:LeftHandRing4|mixamorig:LeftHandThumb4|Take 001|BaseLayer
+  - first:
+      74: -1142135778225065645
+    second: mixamorig:LeftHandRing4|mixamorig:LeftToe_End|Take 001|BaseLayer
+  - first:
+      74: -3544131025951218061
+    second: mixamorig:LeftHandRing4|mixamorig:RightHandIndex4|Take 001|BaseLayer
+  - first:
+      74: 4685495046203120017
+    second: mixamorig:LeftHandRing4|mixamorig:RightHandMiddle4|Take 001|BaseLayer
+  - first:
+      74: 4758479167517972197
+    second: mixamorig:LeftHandRing4|mixamorig:RightHandPinky4|Take 001|BaseLayer
+  - first:
+      74: 7214907957010982934
+    second: mixamorig:LeftHandRing4|mixamorig:RightHandRing4|Take 001|BaseLayer
+  - first:
+      74: -5275526500831567808
+    second: mixamorig:LeftHandRing4|mixamorig:RightHandThumb4|Take 001|BaseLayer
+  - first:
+      74: 6307855326121453511
+    second: mixamorig:LeftHandRing4|mixamorig:RightToe_End|Take 001|BaseLayer
+  - first:
+      74: 6515986027531086353
+    second: mixamorig:LeftHandPinky4|mixamorig:HeadTop_End|Take 001|BaseLayer
+  - first:
+      74: -5642741252958842426
+    second: mixamorig:LeftHandPinky4|mixamorig:LeftHandIndex4|Take 001|BaseLayer
+  - first:
+      74: -5053055462458859219
+    second: mixamorig:LeftHandPinky4|mixamorig:LeftHandMiddle4|Take 001|BaseLayer
+  - first:
+      74: 339988651012681837
+    second: mixamorig:LeftHandPinky4|mixamorig:LeftHandPinky4|Take 001|BaseLayer
+  - first:
+      74: 750140203464184228
+    second: mixamorig:LeftHandPinky4|mixamorig:LeftHandRing4|Take 001|BaseLayer
+  - first:
+      74: 5895014730031683894
+    second: mixamorig:LeftHandPinky4|mixamorig:LeftHandThumb4|Take 001|BaseLayer
+  - first:
+      74: -4470521974552426803
+    second: mixamorig:LeftHandPinky4|mixamorig:LeftToe_End|Take 001|BaseLayer
+  - first:
+      74: 124541098887420557
+    second: mixamorig:LeftHandPinky4|mixamorig:RightHandIndex4|Take 001|BaseLayer
+  - first:
+      74: -3633361927211733557
+    second: mixamorig:LeftHandPinky4|mixamorig:RightHandMiddle4|Take 001|BaseLayer
+  - first:
+      74: 1318626810873038455
+    second: mixamorig:LeftHandPinky4|mixamorig:RightHandPinky4|Take 001|BaseLayer
+  - first:
+      74: -2966417186270222913
+    second: mixamorig:LeftHandPinky4|mixamorig:RightHandRing4|Take 001|BaseLayer
+  - first:
+      74: -9002814270760538831
+    second: mixamorig:LeftHandPinky4|mixamorig:RightHandThumb4|Take 001|BaseLayer
+  - first:
+      74: 6691119579483082858
+    second: mixamorig:LeftHandPinky4|mixamorig:RightToe_End|Take 001|BaseLayer
+  - first:
+      74: 935613540933095921
+    second: mixamorig:RightHandThumb4|mixamorig:HeadTop_End|Take 001|BaseLayer
+  - first:
+      74: -8353430438311148121
+    second: mixamorig:RightHandThumb4|mixamorig:LeftHandIndex4|Take 001|BaseLayer
+  - first:
+      74: -6387822885183369866
+    second: mixamorig:RightHandThumb4|mixamorig:LeftHandMiddle4|Take 001|BaseLayer
+  - first:
+      74: -1338164904435046524
+    second: mixamorig:RightHandThumb4|mixamorig:LeftHandPinky4|Take 001|BaseLayer
+  - first:
+      74: -6111248068747919579
+    second: mixamorig:RightHandThumb4|mixamorig:LeftHandRing4|Take 001|BaseLayer
+  - first:
+      74: 4773870094434213181
+    second: mixamorig:RightHandThumb4|mixamorig:LeftHandThumb4|Take 001|BaseLayer
+  - first:
+      74: -1647740795766991389
+    second: mixamorig:RightHandThumb4|mixamorig:LeftToe_End|Take 001|BaseLayer
+  - first:
+      74: -2262594108087756133
+    second: mixamorig:RightHandThumb4|mixamorig:RightHandIndex4|Take 001|BaseLayer
+  - first:
+      74: 8522564885377551761
+    second: mixamorig:RightHandThumb4|mixamorig:RightHandMiddle4|Take 001|BaseLayer
+  - first:
+      74: -7293810592997871585
+    second: mixamorig:RightHandThumb4|mixamorig:RightHandPinky4|Take 001|BaseLayer
+  - first:
+      74: 3227498101190429108
+    second: mixamorig:RightHandThumb4|mixamorig:RightHandRing4|Take 001|BaseLayer
+  - first:
+      74: -6452703471175649748
+    second: mixamorig:RightHandThumb4|mixamorig:RightHandThumb4|Take 001|BaseLayer
+  - first:
+      74: -6558659788697725390
+    second: mixamorig:RightHandThumb4|mixamorig:RightToe_End|Take 001|BaseLayer
+  - first:
+      74: 6547330839875429887
+    second: mixamorig:RightHandIndex4|mixamorig:HeadTop_End|Take 001|BaseLayer
+  - first:
+      74: -2597345717046814549
+    second: mixamorig:RightHandIndex4|mixamorig:LeftHandIndex4|Take 001|BaseLayer
+  - first:
+      74: 1528947017206305199
+    second: mixamorig:RightHandIndex4|mixamorig:LeftHandMiddle4|Take 001|BaseLayer
+  - first:
+      74: -8579912046192870990
+    second: mixamorig:RightHandIndex4|mixamorig:LeftHandPinky4|Take 001|BaseLayer
+  - first:
+      74: -6290535573193598814
+    second: mixamorig:RightHandIndex4|mixamorig:LeftHandRing4|Take 001|BaseLayer
+  - first:
+      74: -7780062896401940220
+    second: mixamorig:RightHandIndex4|mixamorig:LeftHandThumb4|Take 001|BaseLayer
+  - first:
+      74: 776566083406463549
+    second: mixamorig:RightHandIndex4|mixamorig:LeftToe_End|Take 001|BaseLayer
+  - first:
+      74: 2105611543030841651
+    second: mixamorig:RightHandIndex4|mixamorig:RightHandIndex4|Take 001|BaseLayer
+  - first:
+      74: -2135411424678278300
+    second: mixamorig:RightHandIndex4|mixamorig:RightHandMiddle4|Take 001|BaseLayer
+  - first:
+      74: -6021179897194918111
+    second: mixamorig:RightHandIndex4|mixamorig:RightHandPinky4|Take 001|BaseLayer
+  - first:
+      74: -7890207924570501338
+    second: mixamorig:RightHandIndex4|mixamorig:RightHandRing4|Take 001|BaseLayer
+  - first:
+      74: 3245968624282976283
+    second: mixamorig:RightHandIndex4|mixamorig:RightHandThumb4|Take 001|BaseLayer
+  - first:
+      74: -3467788959746129239
+    second: mixamorig:RightHandIndex4|mixamorig:RightToe_End|Take 001|BaseLayer
+  - first:
+      74: 6843093356363024062
+    second: mixamorig:RightHandMiddle4|mixamorig:HeadTop_End|Take 001|BaseLayer
+  - first:
+      74: 4340553107394084954
+    second: mixamorig:RightHandMiddle4|mixamorig:LeftHandIndex4|Take 001|BaseLayer
+  - first:
+      74: 1989894245075477474
+    second: mixamorig:RightHandMiddle4|mixamorig:LeftHandMiddle4|Take 001|BaseLayer
+  - first:
+      74: -5078083784931964288
+    second: mixamorig:RightHandMiddle4|mixamorig:LeftHandPinky4|Take 001|BaseLayer
+  - first:
+      74: 6566388366184086470
+    second: mixamorig:RightHandMiddle4|mixamorig:LeftHandRing4|Take 001|BaseLayer
+  - first:
+      74: -6267894108328646448
+    second: mixamorig:RightHandMiddle4|mixamorig:LeftHandThumb4|Take 001|BaseLayer
+  - first:
+      74: -8206918691598542750
+    second: mixamorig:RightHandMiddle4|mixamorig:LeftToe_End|Take 001|BaseLayer
+  - first:
+      74: 6366296541220644159
+    second: mixamorig:RightHandMiddle4|mixamorig:RightHandIndex4|Take 001|BaseLayer
+  - first:
+      74: -3276402434797237543
+    second: mixamorig:RightHandMiddle4|mixamorig:RightHandMiddle4|Take 001|BaseLayer
+  - first:
+      74: -7940635107751138557
+    second: mixamorig:RightHandMiddle4|mixamorig:RightHandPinky4|Take 001|BaseLayer
+  - first:
+      74: 8707019132775136249
+    second: mixamorig:RightHandMiddle4|mixamorig:RightHandRing4|Take 001|BaseLayer
+  - first:
+      74: 1679984780145805234
+    second: mixamorig:RightHandMiddle4|mixamorig:RightHandThumb4|Take 001|BaseLayer
+  - first:
+      74: 5923698874034411466
+    second: mixamorig:RightHandMiddle4|mixamorig:RightToe_End|Take 001|BaseLayer
+  - first:
+      74: 6354281700328116849
+    second: mixamorig:RightHandRing4|mixamorig:HeadTop_End|Take 001|BaseLayer
+  - first:
+      74: -8096560420506250129
+    second: mixamorig:RightHandRing4|mixamorig:LeftHandIndex4|Take 001|BaseLayer
+  - first:
+      74: -8229249793202939695
+    second: mixamorig:RightHandRing4|mixamorig:LeftHandMiddle4|Take 001|BaseLayer
+  - first:
+      74: -6597166585961995555
+    second: mixamorig:RightHandRing4|mixamorig:LeftHandPinky4|Take 001|BaseLayer
+  - first:
+      74: 3098361102006380313
+    second: mixamorig:RightHandRing4|mixamorig:LeftHandRing4|Take 001|BaseLayer
+  - first:
+      74: 4772610302176040463
+    second: mixamorig:RightHandRing4|mixamorig:LeftHandThumb4|Take 001|BaseLayer
+  - first:
+      74: 5514027665518926909
+    second: mixamorig:RightHandRing4|mixamorig:LeftToe_End|Take 001|BaseLayer
+  - first:
+      74: 4296879160593125823
+    second: mixamorig:RightHandRing4|mixamorig:RightHandIndex4|Take 001|BaseLayer
+  - first:
+      74: 3100600769311021060
+    second: mixamorig:RightHandRing4|mixamorig:RightHandMiddle4|Take 001|BaseLayer
+  - first:
+      74: -1159228360480571842
+    second: mixamorig:RightHandRing4|mixamorig:RightHandPinky4|Take 001|BaseLayer
+  - first:
+      74: 1741354137774695226
+    second: mixamorig:RightHandRing4|mixamorig:RightHandRing4|Take 001|BaseLayer
+  - first:
+      74: 7683631904384225958
+    second: mixamorig:RightHandRing4|mixamorig:RightHandThumb4|Take 001|BaseLayer
+  - first:
+      74: 4573091156408496808
+    second: mixamorig:RightHandRing4|mixamorig:RightToe_End|Take 001|BaseLayer
+  - first:
+      74: 2429985591292736893
+    second: mixamorig:RightHandPinky4|mixamorig:HeadTop_End|Take 001|BaseLayer
+  - first:
+      74: 5655045988224400975
+    second: mixamorig:RightHandPinky4|mixamorig:LeftHandIndex4|Take 001|BaseLayer
+  - first:
+      74: 841059992901300279
+    second: mixamorig:RightHandPinky4|mixamorig:LeftHandMiddle4|Take 001|BaseLayer
+  - first:
+      74: 8129053188210238748
+    second: mixamorig:RightHandPinky4|mixamorig:LeftHandPinky4|Take 001|BaseLayer
+  - first:
+      74: -797976012613838905
+    second: mixamorig:RightHandPinky4|mixamorig:LeftHandRing4|Take 001|BaseLayer
+  - first:
+      74: -2922008920604687100
+    second: mixamorig:RightHandPinky4|mixamorig:LeftHandThumb4|Take 001|BaseLayer
+  - first:
+      74: -9217709889767550710
+    second: mixamorig:RightHandPinky4|mixamorig:LeftToe_End|Take 001|BaseLayer
+  - first:
+      74: -5121370055911123773
+    second: mixamorig:RightHandPinky4|mixamorig:RightHandIndex4|Take 001|BaseLayer
+  - first:
+      74: -6772067803617099117
+    second: mixamorig:RightHandPinky4|mixamorig:RightHandMiddle4|Take 001|BaseLayer
+  - first:
+      74: -2649453377472391333
+    second: mixamorig:RightHandPinky4|mixamorig:RightHandPinky4|Take 001|BaseLayer
+  - first:
+      74: 3290689508214855013
+    second: mixamorig:RightHandPinky4|mixamorig:RightHandRing4|Take 001|BaseLayer
+  - first:
+      74: 5101681979776334644
+    second: mixamorig:RightHandPinky4|mixamorig:RightHandThumb4|Take 001|BaseLayer
+  - first:
+      74: -2335556154845068679
+    second: mixamorig:RightHandPinky4|mixamorig:RightToe_End|Take 001|BaseLayer
+  - first:
+      74: 5199735372929622837
+    second: mixamorig:LeftToe_End|mixamorig:HeadTop_End|Take 001|BaseLayer
+  - first:
+      74: -4730987697130785045
+    second: mixamorig:LeftToe_End|mixamorig:LeftHandIndex4|Take 001|BaseLayer
+  - first:
+      74: -6423214063949600309
+    second: mixamorig:LeftToe_End|mixamorig:LeftHandMiddle4|Take 001|BaseLayer
+  - first:
+      74: 3811731064085682023
+    second: mixamorig:LeftToe_End|mixamorig:LeftHandPinky4|Take 001|BaseLayer
+  - first:
+      74: -4149484909991668140
+    second: mixamorig:LeftToe_End|mixamorig:LeftHandRing4|Take 001|BaseLayer
+  - first:
+      74: -8225708844884490169
+    second: mixamorig:LeftToe_End|mixamorig:LeftHandThumb4|Take 001|BaseLayer
+  - first:
+      74: 8800022718446017423
+    second: mixamorig:LeftToe_End|mixamorig:LeftToe_End|Take 001|BaseLayer
+  - first:
+      74: -3426116837515524711
+    second: mixamorig:LeftToe_End|mixamorig:RightHandIndex4|Take 001|BaseLayer
+  - first:
+      74: 6753061797922797219
+    second: mixamorig:LeftToe_End|mixamorig:RightHandMiddle4|Take 001|BaseLayer
+  - first:
+      74: -1467568916247339366
+    second: mixamorig:LeftToe_End|mixamorig:RightHandPinky4|Take 001|BaseLayer
+  - first:
+      74: 2383320122825258041
+    second: mixamorig:LeftToe_End|mixamorig:RightHandRing4|Take 001|BaseLayer
+  - first:
+      74: 4693847802185648975
+    second: mixamorig:LeftToe_End|mixamorig:RightHandThumb4|Take 001|BaseLayer
+  - first:
+      74: 6180680204932499851
+    second: mixamorig:LeftToe_End|mixamorig:RightToe_End|Take 001|BaseLayer
+  - first:
+      74: -8695374738023941055
+    second: mixamorig:RightToe_End|mixamorig:HeadTop_End|Take 001|BaseLayer
+  - first:
+      74: -8845468970032320121
+    second: mixamorig:RightToe_End|mixamorig:LeftHandIndex4|Take 001|BaseLayer
+  - first:
+      74: -8023046363779753627
+    second: mixamorig:RightToe_End|mixamorig:LeftHandMiddle4|Take 001|BaseLayer
+  - first:
+      74: -5466888844074377349
+    second: mixamorig:RightToe_End|mixamorig:LeftHandPinky4|Take 001|BaseLayer
+  - first:
+      74: -2358137496759125502
+    second: mixamorig:RightToe_End|mixamorig:LeftHandRing4|Take 001|BaseLayer
+  - first:
+      74: 8837641151586173991
+    second: mixamorig:RightToe_End|mixamorig:LeftHandThumb4|Take 001|BaseLayer
+  - first:
+      74: 3773805566311720167
+    second: mixamorig:RightToe_End|mixamorig:LeftToe_End|Take 001|BaseLayer
+  - first:
+      74: 3919168358602089180
+    second: mixamorig:RightToe_End|mixamorig:RightHandIndex4|Take 001|BaseLayer
+  - first:
+      74: 3842845414437775137
+    second: mixamorig:RightToe_End|mixamorig:RightHandMiddle4|Take 001|BaseLayer
+  - first:
+      74: -222228976180657805
+    second: mixamorig:RightToe_End|mixamorig:RightHandPinky4|Take 001|BaseLayer
+  - first:
+      74: 8108475987926515037
+    second: mixamorig:RightToe_End|mixamorig:RightHandRing4|Take 001|BaseLayer
+  - first:
+      74: 6130500433106247663
+    second: mixamorig:RightToe_End|mixamorig:RightHandThumb4|Take 001|BaseLayer
+  - first:
+      74: 6371977640513005450
+    second: mixamorig:RightToe_End|mixamorig:RightToe_End|Take 001|BaseLayer
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
