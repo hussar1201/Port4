@@ -30,7 +30,7 @@ public class Pouch_Outer : MonoBehaviour
         {
             Debug.Log("Hand OUT");
             touched = false;
-            p_e.DestoryItem();
+            p_e.DestroyItem();
             p_e.socketActive = false;
         }
 

@@ -12,6 +12,7 @@ public class Mag : MonoBehaviour
     public Collider coll;
     public bool flag_IsAmmoLeft { get; private set; }
     public GameObject[] arr_objects_child;
+    private BoxCollider[] arr_Colliders;
 
     private void OnEnable()
     {
@@ -19,6 +20,7 @@ public class Mag : MonoBehaviour
         coll = GetComponent<Collider>();
         if (ammo_present > 0) flag_IsAmmoLeft = true;
         rb = GetComponent<Rigidbody>();
+        arr_Colliders = GetComponentsInChildren<BoxCollider>();
     }
 
     public bool SendAmmoToChamber()
@@ -54,6 +56,32 @@ public class Mag : MonoBehaviour
 
         Destroy(gameObject);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag.Contains("Hand"))
+        {
+            rb.useGravity = false;
+            for(int i =0;i<arr_Colliders.Length;i++)
+            {
+                arr_Colliders[i].isTrigger = true;
+            }
+
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag.Contains("Hand"))
+        {
+            rb.useGravity = true;
+            for (int i = 0; i < arr_Colliders.Length; i++)
+            {
+                arr_Colliders[i].isTrigger = false;
+            }
+        }
+    }
+
 
 
 

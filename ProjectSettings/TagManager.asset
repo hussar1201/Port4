@@ -10,6 +10,8 @@ TagManager:
   - Gun
   - Mag_M1911
   - Hand
+  - Hand_L
+  - Hand_R
   layers:
   - Default
   - TransparentFX

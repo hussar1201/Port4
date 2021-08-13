@@ -15,12 +15,34 @@ public class Pouch_Equipment : XRSocketInteractor
 
     protected override void Start()
     {
-        this.socketActive = false;    
+        this.socketActive = false;         
+    }
+
+
+    protected override void OnHoverExited(HoverExitEventArgs args)
+    {
+        Debug.Log("OnHoverExited");
+
+        if (args.interactable.gameObject.GetInstanceID() == tmp_Mag.gameObject.GetInstanceID())
+        {
+            is_Mag_Drawed = true;
+            is_Mag_Existed = false;
+            tmp_Mag = null;
+            Debug.Log("Mag Drawed");
+        }
+        else
+        {
+            is_Mag_Drawed = false;
+        }
+
+
+        base.OnHoverExited(args);
     }
 
     public void CreateItem()
     {
-        if (!is_Mag_Existed) { 
+        if (!is_Mag_Existed)
+        {
             //tmp_Mag = Instantiate(prefab_mag, transform.position, transform.rotation * Quaternion.Euler(0f, 90f, 90f));
             tmp_Mag = Instantiate(prefab_mag, transform.position, transform.rotation);
             is_Mag_Existed = true;
@@ -28,30 +50,12 @@ public class Pouch_Equipment : XRSocketInteractor
             Debug.Log("Mag Created");
         }
     }
-    
-    protected override void OnHoverExited(HoverExitEventArgs args)
+
+    public void DestroyItem()
     {
-
-        if (tmp_Mag == null) return;
-
-        if (args.interactable.gameObject.GetInstanceID() == tmp_Mag.gameObject.GetInstanceID())
+        if (!is_Mag_Drawed && tmp_Mag!=null)
         {
-            is_Mag_Drawed = true;
-            is_Mag_Existed = false;
-            Debug.Log("Mag Drawed");
-        }
-        else is_Mag_Drawed = false;
-
-
-        base.OnHoverExited(args);
-    }
-
-
-    public void DestoryItem()
-    {
-        if (!is_Mag_Drawed)
-        {
-            Destroy(tmp_Mag);
+            Destroy(tmp_Mag.gameObject);
             tmp_Mag = null;
             is_Mag_Existed = false;
             is_Mag_Drawed = false;

@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747dff8d0b094a84896d6105b54aeb91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  num_initial: 5
+  num_initial: 30
   ammo_present: 0
   rb: {fileID: 0}
   coll: {fileID: 0}
