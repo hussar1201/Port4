@@ -4,14 +4,20 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - LeftHand
-  - RightHand
-  - Mag_Stanag556
-  - Gun
-  - Mag_M1911
-  - Hand
-  - Hand_L
-  - Hand_R
+  - Item
+  - Target
+  - Wood
+  - Concrete
+  - Dirt
+  - Fire
+  - Metal
+  - Crosshair
+  - NPC
+  - Flesh
+  - Cover
+  - Terrain
+  - Collision
+  - LootBox
   layers:
   - Default
   - TransparentFX
@@ -19,12 +25,6 @@ TagManager:
   - 
   - Water
   - UI
-  - Ground
-  - Body
-  - Grabable
-  - Grabable_DirectOnly
-  - Grabable_SecondPoint
-  - Hand
   - 
   - 
   - 
@@ -39,6 +39,12 @@ TagManager:
   - 
   - 
   - 
+  - Weapon
+  - Player
+  - NPC
+  - Cover
+  - Target
+  - Dead
   - 
   - 
   - 
