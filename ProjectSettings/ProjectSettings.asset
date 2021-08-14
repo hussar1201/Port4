@@ -146,7 +146,8 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.DarkTreeDevelopment.DarkTreeFPS
+    Android: com.DefaultCompany.Port4_VR
+    Standalone: com.DefaultCompany.Port4VR
   buildNumber:
     Standalone: 0
     iPhone: 0

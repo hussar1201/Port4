@@ -17,12 +17,17 @@ public class FireArm : MonoBehaviour
     public Animator animator_Selecter;
     public Animator animator_Bolt;
     private FiringMode mode_fire = FiringMode.auto;
-    private float time_interval_autofire = .1f;
+
+    public Transform transform_Firing;
+       
+
+    private float time_interval_autofire = .15f;
     private float time_passed_interval_fire = 0f;
     public bool isAutoFireAvailable = true;
     private bool flag_trigger_released = true;
     private float time_interval_btn_pressed = .2f;
     private float time_passed_interval_btn_pressed = 0f;
+    private bool flag_played_empty_sound = false;
 
     private SoundPlayer soundPlayer;
 
@@ -43,10 +48,10 @@ public class FireArm : MonoBehaviour
         if (chamber.isAmmoOnChamber)
         {
             Debug.Log("GUN: FIRE!!!");
+            MakeRayCast();
             soundPlayer.PlayOneShot(SoundPlayer.Part.shot, 0);
             animator_Bolt.SetBool("Firing", true);
             StartCoroutine(ShowMuzzleBreak());
-
 
             chamber.LoadAmmo();
             if (!chamber.isAmmoOnChamber)
@@ -58,12 +63,31 @@ public class FireArm : MonoBehaviour
                 magCatcher.flag_new_mag_inserted = false;
                 soundPlayer.PlayOneShot(SoundPlayer.Part.etc, 1);
             }
-
-
         }
         else
         {
-            soundPlayer.PlayOneShot(SoundPlayer.Part.shot, 1);
+            if (!flag_played_empty_sound)
+            {
+                soundPlayer.PlayOneShot(SoundPlayer.Part.shot, 1);
+                flag_played_empty_sound = true;
+            }
+        }
+    }
+
+    private void MakeRayCast()
+    {
+        Debug.Log(LayerMask.NameToLayer("Damageable"));
+        
+        if (Physics.Raycast(transform_Firing.position, transform_Firing.forward, out RaycastHit hitInfo, 100f))
+        {
+            Debug.Log("Ray HIT");
+
+            IDamageable tmp = hitInfo.collider.GetComponent<IDamageable>();
+            if(tmp!=null)
+            {
+                tmp.OnDamage(hitInfo.point, hitInfo.normal);
+            }
+            
         }
     }
 
@@ -118,7 +142,7 @@ public class FireArm : MonoBehaviour
             animator_Selecter.SetBool("flag_Auto", false);
             return;
         }
-
+ 
     }
 
 
@@ -171,21 +195,27 @@ public class FireArm : MonoBehaviour
 
         if (InputController_XR.instance.trigger_R >= 0.8f) //사격
         {
+
             if (mode_fire == FiringMode.auto)
             {
                 if (time_passed_interval_fire >= time_interval_autofire)
                 {
                     Fire();
                     time_passed_interval_fire = 0f;
+                    flag_trigger_released = false;
                 }
             }
             else if (mode_fire == FiringMode.semi && flag_trigger_released)
             {
                 Fire();
                 flag_trigger_released = false;
-            }
-
+            }  
         }
-        if (InputController_XR.instance.trigger_R <= 0.5f) flag_trigger_released = true; //단발 사격시 방아쇠 관련 플래그
+
+        if (InputController_XR.instance.trigger_R <= 0.5f)
+        {          
+            flag_trigger_released = true; //단발 사격시 방아쇠 관련 플래그
+            flag_played_empty_sound = false;
+        }
     }
 }

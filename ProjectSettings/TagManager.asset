@@ -18,11 +18,19 @@ TagManager:
   - Terrain
   - Collision
   - LootBox
+  - Mag_Stanag556
+  - FxTemporaire
+  - Mag_M1911
+  - Gun
+  - Hand_L
+  - LeftHand
+  - RightHand
+  - Hand_R
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Damageable
   - Water
   - UI
   - 
@@ -39,12 +47,12 @@ TagManager:
   - 
   - 
   - 
-  - Weapon
-  - Player
-  - NPC
-  - Cover
-  - Target
-  - Dead
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
