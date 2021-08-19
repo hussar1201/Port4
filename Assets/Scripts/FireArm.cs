@@ -20,7 +20,7 @@ public class FireArm : MonoBehaviour
 
     public Transform transform_Firing;
 
-
+    private Rigidbody rb;
     private float time_interval_autofire = .15f;
     private float time_passed_interval_fire = 0f;
     public bool isAutoFireAvailable = true;
@@ -51,8 +51,7 @@ public class FireArm : MonoBehaviour
             MakeRayCast();
             soundPlayer.PlayOneShot(SoundPlayer.Part.shot, 0);
             animator_Bolt.SetBool("Firing", true);
-            StartCoroutine(ShowMuzzleBreak());
-
+            StartCoroutine(ShowMuzzleBreak());           
             chamber.LoadAmmo();
             if (!chamber.isAmmoOnChamber)
             {
@@ -76,12 +75,8 @@ public class FireArm : MonoBehaviour
 
     private void MakeRayCast()
     {
-        Debug.Log(LayerMask.NameToLayer("Damageable"));
-
         if (Physics.Raycast(transform_Firing.position, transform_Firing.forward, out RaycastHit hitInfo, 100f))
         {
-            Debug.Log("Ray HIT");
-
             IDamageable tmp = hitInfo.collider.GetComponent<IDamageable>();
             if (tmp != null)
             {
@@ -98,6 +93,7 @@ public class FireArm : MonoBehaviour
         {
             ps.gameObject.SetActive(true);
             ps.Play();
+            
             yield return new WaitForSeconds(.2f);
             ps.transform.Rotate(0f, 0f, 30f);
             animator_Bolt.SetBool("Firing", false);
@@ -127,6 +123,8 @@ public class FireArm : MonoBehaviour
         if (!isAutoFireAvailable) mode_fire = FiringMode.semi;
 
         animator_Selecter.SetBool("flag_Auto", mode_fire == FiringMode.auto);
+
+        rb = GetComponent<Rigidbody>();
 
         //소리 재생 컴포넌트 참조
         soundPlayer = GetComponent<SoundPlayer>();

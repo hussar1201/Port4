@@ -12,18 +12,13 @@ public class Pouch_for_Item_Spawn : MonoBehaviour
     private bool hand_L = false;
 
     private void OnTriggerEnter(Collider other)
-    {
-        
+    {      
         if (other.gameObject.tag.Contains("Hand"))
         {
             if (other.gameObject.tag.Contains("_L")) hand_L = true;
             else hand_L = false;
-            Debug.Log(hand_L);
-
             flag_touched = true;
         }
-
-
     }
 
 
@@ -44,11 +39,9 @@ public class Pouch_for_Item_Spawn : MonoBehaviour
 
 
     private void OnTriggerExit(Collider other)
-    {
-        
+    {      
             flag_touched = false;
-            flag_created = false;
-        
+            flag_created = false;        
     }
 
 

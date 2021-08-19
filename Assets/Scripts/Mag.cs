@@ -35,7 +35,6 @@ public class Mag : MonoBehaviour
             ammo_present = 0;
             flag_IsAmmoLeft = false;
         }
-        Debug.Log("Mag: " + ammo_present);
         return flag_IsAmmoLeft;
 
     }

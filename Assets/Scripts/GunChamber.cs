@@ -38,7 +38,7 @@ public class GunChamber : MonoBehaviour
                 isBoltOpened = false;
                 isAmmoOnChamber = true;
                 
-                Debug.Log("Chamber:  Ammo Loaded");
+                //Debug.Log("Chamber:  Ammo Loaded");
             }
             else
             {
@@ -57,17 +57,10 @@ public class GunChamber : MonoBehaviour
     }
 
     public void ReleaseCase()
-    {
-        Debug.Log("case created");
-        //GameObject tmp = Instantiate(prefab_EmptyCase, pos_eject_case_spawn.position, transform.rotation);
+    {     
         GameObject tmp = Instantiate(prefab_EmptyCase, pos_eject_case_spawn.position, Quaternion.Euler(0f,180f,0f)*pos_eject_case_spawn.rotation);
-        
-        
-        
-
         Rigidbody rb = tmp.GetComponent<Rigidbody>();
         rb.AddForce((pos_eject_case_headingto.position - pos_eject_case_spawn.position).normalized*3, ForceMode.Impulse);
-
     }
 
 

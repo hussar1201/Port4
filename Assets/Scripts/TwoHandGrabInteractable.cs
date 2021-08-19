@@ -21,10 +21,8 @@ public class TwoHandGrabInteractable : XRGrabInteractable
     {
         grabPoint_second.selectEntered.AddListener(OnSecondPointGrabEnter);
         grabPoint_second.selectExited.AddListener(OnSecondPointGrabExit);
-
         //grabPoint_second.onSelectEntered.AddListener(OnSecondPointGrabEnter);
         //grabPoint_second.onSelectExited.AddListener(OnSecondPointGrabExit);
-
     }
 
     public override void ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase updatePhase)
@@ -76,10 +74,8 @@ public class TwoHandGrabInteractable : XRGrabInteractable
     {
 
         if (second_hand && second_hand.CompareTag(interactor.tag))
-        {
-            Debug.Log("XXXXX");
+        {           
             return false;
-
         }
 
         bool flag_already_selected = selectingInteractor && !selectingInteractor.Equals(interactor);
