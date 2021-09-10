@@ -71,8 +71,8 @@ public class GameManager : MonoBehaviour
         score += score_per_hit;
         
         UIManager.instance.ChangeTextState("Fire At Will!!\nScore: " + score);
-        //if (score/ score_per_hit >= arr_target.Length * arr_target[0].num_point_hit)
-        if (score/ score_per_hit >= arr_target[0].num_point_hit)
+        //if (score/ score_per_hit >= arr_target[0].num_point_hit)
+        if (score / score_per_hit >= arr_target.Length * arr_target[0].num_point_hit)
         {
             UIManager.instance.ChangeTextState("All Targets neutralized.\n Total Score: " + score);
             flag_practice_over = true;

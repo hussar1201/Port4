@@ -15,14 +15,37 @@ public class Pouch_Equipment : XRSocketInteractor
 
     protected override void Start()
     {
-        this.socketActive = false;         
+}
+
+
+    protected override void OnHoverEntered(HoverEnterEventArgs args)
+    {
+        Debug.Log("OnHoverEntered");
+        socketActive = false;
+
+
+        base.OnHoverEntered(args);
+
     }
+
+    public override bool CanSelect(XRBaseInteractable interactable)
+    {
+
+        return base.CanSelect(interactable) && interactable.gameObject.CompareTag("Gun");
+    }
+
+
+
+
+
 
 
     protected override void OnHoverExited(HoverExitEventArgs args)
     {
         Debug.Log("OnHoverExited");
-
+        socketActive = true;
+        base.OnHoverExited(args);
+        /*
         if (args.interactable.gameObject.GetInstanceID() == tmp_Mag.gameObject.GetInstanceID())
         {
             is_Mag_Drawed = true;
@@ -34,10 +57,15 @@ public class Pouch_Equipment : XRSocketInteractor
         {
             is_Mag_Drawed = false;
         }
+        */
 
 
-        base.OnHoverExited(args);
+
     }
+
+
+
+
 
     public void CreateItem()
     {

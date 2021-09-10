@@ -35,12 +35,14 @@ public class FireArm : MonoBehaviour
     {
         Debug.Log("is grabbed");
         isGrabbed = true;
+        rb.useGravity = false;
     }
 
     public void UnGrabbed()
     {
         Debug.Log("is ungrabbed");
         isGrabbed = false;
+        rb.useGravity = true;
     }
 
     public void Fire()

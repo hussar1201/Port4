@@ -41,7 +41,7 @@ public class Mag : MonoBehaviour
 
     public void Eject()
     {
-        rb.AddForce(transform.forward * -0.15f, ForceMode.Impulse);
+        rb.AddForce(transform.forward * -0.7f, ForceMode.Impulse);
     }
 
 
